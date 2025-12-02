@@ -20,8 +20,8 @@ variable "Instance_Det" {
   default = {
     frontend = ""
     mongodb = ""
-    catalogue = ""
     redis = ""
+    catalogue = ""
     mysql = ""
     user = ""
     cart = ""
