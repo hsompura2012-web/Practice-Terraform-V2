@@ -17,17 +17,16 @@ variable "zone_id" {
 }
 
 variable "Instance_Det" {
-  default = [
-       "frontend",
-       "mongodb",
-       "catalogue",
-       "redis",
-       "mysql",
-       "cart",
-       "user",
-       "shipping",
-       "rabbitmq",
-       "payment"
-
-  ]
+  default = {
+    frontend = ""
+    mongodb = ""
+    catalogue = ""
+    redis = ""
+    mysql = ""
+    cart = ""
+    user = ""
+    shipping = ""
+    rabbitmq = ""
+    payment = ""
+  }
 }
