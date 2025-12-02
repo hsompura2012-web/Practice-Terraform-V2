@@ -22,9 +22,9 @@ variable "Instance_Det" {
        "mongodb",
        "catalogue",
        "redis",
-       "user",
-       "cart",
        "mysql",
+       "cart",
+       "user",
        "shipping",
        "rabbitmq",
        "payment"
