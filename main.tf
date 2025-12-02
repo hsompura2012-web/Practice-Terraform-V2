@@ -15,5 +15,5 @@ resource "aws_route53_record" "Record_Launch" {
   name    = "${var.Instance_Det[each.key]}-dev"
   type    = "A"
   ttl     = 50
-  records = [aws_instance.instance_launch[count.index].private_ip]
+  records = [aws_instance.instance_launch[each.key].private_ip]
 }
