@@ -5,14 +5,14 @@ resource "aws_instance" "instance_launch" {
   vpc_security_group_ids = var.vpc_security_group_ids
 
   tags = {
-    Name = var.Instance_Det[each.key]
+    Name = each.key
   }
 }
 
 resource "aws_route53_record" "Record_Launch" {
   for_each =  var.Instance_Det
   zone_id = var.zone_id
-  name    = "${var.Instance_Det[each.key]}-dev"
+  name    = "${each.key}-dev"
   type    = "A"
   ttl     = 50
   records = [aws_instance.instance_launch[each.key].private_ip]
