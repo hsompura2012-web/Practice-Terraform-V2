@@ -18,7 +18,7 @@ resource "aws_instance" "instance_launch" {
     inline =  [
       "sudo dnf install python3.13-pip -y",
       "sudo pip3.11 install ansible",
-      "ansible-pull -i localhost, -U https://github.com/hsompura2012-web/Practice-Ansible-template-V1.git main.yaml -e component = ${each.key} -e env=dev"
+      "ansible-pull -i localhost, -U https://github.com/hsompura2012-web/Practice-Ansible-template-V1.git main.yaml -e component=${each.key} -e env=dev"
 
 ]
   }
