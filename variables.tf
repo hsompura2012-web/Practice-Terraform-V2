@@ -1,4 +1,4 @@
-*ariable "ami" {
+variable "ami" {
   default = "ami-09c813fb71547fc4f"
 }
 
@@ -26,6 +26,7 @@ variable "Instance_Det" {
     user = ""
     cart = ""
     shipping = ""
-    rabbitmq = "+-    payment = ""
+    rabbitmq = ""
+    payment = ""
   }
 }
