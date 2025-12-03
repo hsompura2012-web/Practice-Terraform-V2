@@ -7,6 +7,22 @@ resource "aws_instance" "instance_launch" {
   tags = {
     Name = each.key
   }
+
+  provisioner "PostActivity" {
+    connection {
+      type     = "ssh"
+      user     = "ec2-user"
+      password = "DevOps321"
+      host     = "self.private_ip"
+    }
+    inline =  [
+      "sudo dnf install python.13.pip -y",
+      "sudo pip3.13 install ansible",
+      "ansible-pull -i localhost, -U https://github.com/hsompura2012-web/Practice-Ansible-template-V1.git main.yaml -e component = ${each.key} -e env=dev"
+
+]
+  }
+
 }
 
 resource "aws_route53_record" "Record_Launch" {
