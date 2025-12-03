@@ -13,7 +13,7 @@ resource "aws_instance" "instance_launch" {
       type     = "ssh"
       user     = "ec2-user"
       password = "DevOps321"
-      host     = self.private_ip
+      host     = "${self.private_ip}"
     }
     inline =  [
       "sudo dnf install python.13.pip -y",
