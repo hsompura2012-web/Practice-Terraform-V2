@@ -8,7 +8,7 @@ resource "aws_instance" "instance_launch" {
     Name = each.key
   }
 
-  provisioner "PostActivity" {
+  provisioner "remote-exec" {
     connection {
       type     = "ssh"
       user     = "ec2-user"
