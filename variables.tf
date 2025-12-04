@@ -1,5 +1,13 @@
+data "aws_ami" "AMINAME" {
+  owners = [ "973714476881" ]
+  filter {
+    name = "name"
+    values = [ "RHEL-9-DevOps-Practice" ]
+  }
+}
+
 variable "ami" {
-  default = "ami-09c813fb71547fc4f"
+  default = data.aws_ami.AMINAME.name
 }
 
 variable "instance_type" {
